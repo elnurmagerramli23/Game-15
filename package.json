@@ -1,0 +1,29 @@
+{
+  "name": "game-15",
+  "version": "1.0.0",
+  "description": "team-work",
+  "main": "index.js",
+  "scripts": {
+    "build": "gulp",
+    "start": "gulp watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elnurmagerramli23/Game-15.git"
+  },
+  "author": "web-team",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elnurmagerramli23/Game-15/issues"
+  },
+  "homepage": "https://github.com/elnurmagerramli23/Game-15#readme",
+  "dependencies": {
+    "browser-sync": "2.26.7",
+    "browserify": "16.5.0",
+    "gulp": "4.0.2",
+    "gulp-cli": "2.2.0",
+    "gulp-concat": "2.6.1",
+    "gulp-sass": "^4.0.1",
+    "vinyl-source-stream": "2.0.0"
+  }
+}
