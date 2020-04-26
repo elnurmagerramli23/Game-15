@@ -43,7 +43,7 @@ function watchFiles() {
         }
     })
     watch(
-        'src/index.js',
+        'src/**/*.js',
         watchOptions,
         jsHandle,
     ).on('change', browserSync.reload);
