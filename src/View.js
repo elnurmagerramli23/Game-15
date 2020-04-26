@@ -3,8 +3,23 @@ function View() {
     this._canvas = null;
     this._ctx = null;
 
-    this.init();
 }
+View.prototype.getCanvasContext = () => {
+    return this._ctx;
+    }
+
+const createCanvas = () => {
+    const canvas = document.createElement('canvas');
+    canvas.setAttribute('class', 'canvas');
+    canvas.setAttribute('height', '320px');
+    canvas.setAttribute('width', '320px');
+
+
+    this._ctx = canvas.getContext('2d');
+    
+    return canvas;
+}
+
 View.prototype.init = function() {
     const container_welcome_page = createDiv({class: 'container_welcome_page'});
     const container_game_page = createDiv({class: 'container_game_page'});
@@ -24,6 +39,7 @@ View.prototype.init = function() {
     container_welcome_page.append(welcome_page_bgColor);
     container_game_page.append(mix_button);
 }
+
 
 const createDiv = params => {
     const div = document.createElement('div');
@@ -54,19 +70,60 @@ const createButton = params => {
     return button;
 }
 
-const createCanvas = () => {
-    const canvas = document.createElement('canvas');
-    canvas.setAttribute('class', 'canvas');
-    canvas.setAttribute('height', '320px');
-    canvas.setAttribute('width', '320px');
 
-    this._ctx = canvas.getContext('2d');
 
-    return canvas;
+View.prototype.canvasElems = (context, cellSize) => {
+    let arr = [
+        [1,2,3,4],
+        [5,6,7,8],
+        [9,10,11,12],
+        [13,14,15,0]
+    ];
+
+    function cellView (x, y) {
+        context.fillStyle = '#136781';
+        context.fillRect(
+            x + 1,
+            y + 1,
+            cellSize - 2,
+            cellSize - 2
+        );
+    }
+    function numView(){
+		context.font = "bold "+ 
+      (cellSize/4) + "px Sans";
+    context.textAlign = "center";
+    context.textBaseline = "middle";
+    context.fillStyle = "#222";
+    }
+    this.getNullCell = function(){
+		for (var i = 0; i<4; i++){
+			for (var j=0; j<4; j++){
+				if(arr[j][i] === 0){
+					return {'x': i, 'y': j};
+				}
+			}
+		}
+    }
+    this.draw = function() {
+		for (var i = 0; i < 4; i++) {
+			for (var j = 0; j < 4; j++) {
+				if (arr[i][j] > 0) {
+					cellView(
+                        j * cellSize, 
+                        i * cellSize
+                    );
+					numView();
+					context.fillText(
+                        arr[i][j], 
+                        j * cellSize + cellSize / 2,
+                        i * cellSize + cellSize / 2
+                    );
+				}
+			}
+        }
+    }
 }
 
-View.prototype.getCanvasContext = () => {
-    return this._ctx;
-}
 
 module.exports = View;
