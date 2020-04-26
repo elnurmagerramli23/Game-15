@@ -1,5 +1,9 @@
 function View() {
     this._root = document.querySelector('div#root');
+    this._canvas = null;
+    this._ctx = null;
+
+    this.init();
 }
 View.prototype.init = function() {
     const container_welcome_page = createDiv({class: 'container_welcome_page'});
@@ -13,6 +17,8 @@ View.prototype.init = function() {
     mix_button.innerHTML = 'MIX';
     this._root.append(container_welcome_page);
     this._root.append(container_game_page);
+    this._canvas = createCanvas();
+    this._root.append(this._canvas);
     container_welcome_page.append(page_heading);
     container_welcome_page.append(play_button);
     container_welcome_page.append(welcome_page_bgColor);
@@ -46,6 +52,21 @@ const createButton = params => {
     params.onclick && (button.onclick = params.onclick);
 
     return button;
+}
+
+const createCanvas = () => {
+    const canvas = document.createElement('canvas');
+    canvas.setAttribute('class', 'canvas');
+    canvas.setAttribute('height', '320px');
+    canvas.setAttribute('width', '320px');
+
+    this._ctx = canvas.getContext('2d');
+
+    return canvas;
+}
+
+View.prototype.getCanvasContext = () => {
+    return this._ctx;
 }
 
 module.exports = View;
