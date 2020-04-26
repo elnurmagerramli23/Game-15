@@ -22,7 +22,7 @@ function htmlHandle (cb) {
 }
 
 function cssHandle (cb) {
-    src('src/**/*.css')
+    src('src/**/*.sass')
         .pipe(concat('styles.css'))
         .pipe(dest('dest'))
         .pipe(browserSync.stream());
