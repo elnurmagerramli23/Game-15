@@ -22,7 +22,7 @@ function htmlHandle (cb) {
 }
 
 function cssHandle (cb) {
-    src('src/**/*.sass')
+    src('src/*.sass')
         .pipe(concat('styles.css'))
         .pipe(dest('dest'))
         .pipe(browserSync.stream());
@@ -43,17 +43,17 @@ function watchFiles() {
         }
     })
     watch(
-        'src/**/*.js',
+        'src/index.js',
         watchOptions,
         jsHandle,
     ).on('change', browserSync.reload);
     watch(
-        'src/*.html',
+        'src/index.html',
         watchOptions,
         htmlHandle,
     ).on('change', browserSync.reload);
     watch(
-        'src/**/*.css',
+        'src/style.sass',
         watchOptions,
         cssHandle,
     ).on('change', browserSync.reload);
