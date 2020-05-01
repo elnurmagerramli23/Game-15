@@ -32,15 +32,14 @@ div#root {
 .container_game_page {
   height: 720px;
   width: 101.3%;
-  margin-top: 20px;
-  display: flex;
+  margin-top: 0;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-image: url(images/fifteen_second_light_bg.jpg);
   background-size: contain;
   background-repeat: no-repeat;
-  visibility: hidden;
 }
 .page_heading_light {
   color: greenyellow;

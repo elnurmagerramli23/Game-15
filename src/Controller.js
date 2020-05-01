@@ -19,14 +19,13 @@ Controller.prototype.sendMatrixToView = function () {
     model.forEach(array => {
         array.forEach(element => {
             this._view.drawMatrix(element); 
-        });
-    });
-};
+        })
+    })
+}
 
 Controller.prototype.getFromModel = function(value) {
     const indexEl = this._model.findIndex(value);
     const check = this.checkForZero(indexEl);
-    // console.log(indexEl, value, check);
     
     if(check) {
         this._model.swapElems(indexEl, check);
@@ -35,7 +34,7 @@ Controller.prototype.getFromModel = function(value) {
         this._view.deleteItems();
         this.sendMatrixToView();
         this.getVictory();
-    };
+    }
 }
 
 Controller.prototype.checkForZero = function(item) {
@@ -70,7 +69,7 @@ Controller.prototype.checkForZero = function(item) {
     }
 
     return false;
-};
+}
 
 Controller.prototype.getRandom = function() {
     this._mtx = this._model.getMatrix();
@@ -110,19 +109,6 @@ Controller.prototype.win = function() {
     }
 }
 
-// Controller.prototype.getVictory = function() {
-//     const testMatrix = '[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 0]';
-//     let testArray = this._mtx.flat();
-//     console.log('check', testArray);
-
-//     for(let i = 0; i < testMatrix.length; i++){
-//         console.log('loop');
-//         if(testArray === testMatrix) {
-//             alert('You Win!');
-//             console.log('Win!');
-//         }
-//     }
-// }
 
 Controller.prototype.getVictory = function() {
     const testMatrix = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 0];

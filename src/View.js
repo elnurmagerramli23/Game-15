@@ -33,18 +33,33 @@ View.prototype.init = function() {
     container_welcome_page.append(play_button);
     container_welcome_page.append(welcome_page_bgColor);
     this.visible();
+    this.lightMode();
 }
 
 View.prototype.visible = function () {
     const play = document.querySelector('#play_button');
 
     play.addEventListener('click', () => {
-        document.querySelector('#gameContainer').style.visibility = 'visible';
+        document.querySelector('#gameContainer').style.display = 'flex';
+        document.querySelector('.container_welcome_page').style.display = 'none';
     });
+}
+
+View.prototype.lightMode = function () {
+    const light = document.querySelector('.color_block_light');
+
+    light.addEventListener('click', () => {
+        document.querySelector('.mix_button').style.backgroundColor = 'greenyellow';
+        document.querySelector('.mix_button').style.color = 'blue';
+        document.querySelector('.game_blocks').style.backgroundColor = 'red';
+        document.querySelector('.game_blocks').className = 'game_blocks_light';
+        // document.querySelector('.container_game_page').style.backgroundImage= 'url(./images/light.jpg)';
+    })
 }
 
 const createDiv = params => {
     const div = document.createElement('div');
+
     div.setAttribute('class', params.class);
     params.id && (div.id = params.id);
     params.title && (div.title = params.title);
