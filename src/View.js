@@ -6,11 +6,16 @@ function View() {
 }
 View.prototype.init = function() {
     const container_welcome_page = createDiv({class: 'container_welcome_page'});
-    const container_game_page = createDiv({class: 'container_game_page'});
+    const container_game_page = createDiv({class: 'container_game_page', id: 'gameContainer'});
     const welcome_page_bgColor = createDiv({class: 'welcome_page_bgColor'});
-    this._gameBlock = createDiv({class: 'game'});
-    const page_heading = createHeading({class: 'page_heading'});
-    page_heading.innerHTML = 'WELCOME TO FIFTEEN!';
+    const color_block = createDiv({color_block});
+    const light = createButton({class: 'color_block_light'});
+    light.innerHTML = 'Light version';
+    const dark = createButton({class: 'color_block_dark'});
+    dark.innerHTML = 'Dark version';
+    this._gameBlock = createDiv({class: 'game_dark'});
+    const page_heading_light = createHeading({class: 'page_heading_light'});
+    page_heading_light.innerHTML = 'WELCOME TO FIFTEEN!';
     const play_button = createButton({class: 'play_button', id: 'play_button'});
     play_button.innerHTML = 'PLAY';
     this.mix_button = createButton({class: 'mix_button', id: 'mix_button'});
@@ -21,9 +26,21 @@ View.prototype.init = function() {
     container_game_page.append(this._gameBlock);
     this._root.append(container_welcome_page);
     this._root.append(container_game_page);
-    container_welcome_page.append(page_heading);
+    container_welcome_page.append(color_block);
+    color_block.append(light);
+    color_block.append(dark);
+    container_welcome_page.append(page_heading_light);
     container_welcome_page.append(play_button);
     container_welcome_page.append(welcome_page_bgColor);
+    this.visible();
+}
+
+View.prototype.visible = function () {
+    const play = document.querySelector('#play_button');
+
+    play.addEventListener('click', () => {
+        document.querySelector('#gameContainer').style.visibility = 'visible';
+    });
 }
 
 const createDiv = params => {

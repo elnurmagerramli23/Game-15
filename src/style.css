@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+body {
+  background-color: white;
+}
+div#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.container_welcome_page {
+  height: 600px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: green;
+  background: linear-gradient(45deg, #F17C58, #E94584, #24AADB, #27DBB1, #FFDC18, #FF3706);
+  background-size: 600% 100%;
+  animation: gradient 16s linear infinite;
+  animation-direction: alternate;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
+.container_game_page {
+  height: 720px;
+  width: 101.3%;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url(images/fifteen_second_light_bg.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  visibility: hidden;
+}
+.page_heading_light {
+  color: greenyellow;
+  font-size: 50px;
+}
+.page_heading_dark {
+  color: #000000;
+  font-size: 50px;
+}
+.play_button {
+  width: 110px;
+  height: 70px;
+  font-family: 'Nanum Gothic', sans-serif;
+  background-color: #2ff8ff;
+  color: #FFDC18;
+  font-size: 30px;
+  transition: 0.5s all ease-in-out;
+}
+.play_button:hover {
+  background-color: #78cc2a;
+  color: #E94584;
+  transform: scale(1.5, 1.5);
+}
+.mixDiv {
+  width: 323px;
+  display: flex;
+  justify-content: start;
+  padding: 0;
+}
+.mix_button {
+  width: 82px;
+  height: 50px;
+  cursor: pointer;
+  font-family: 'Nanum Gothic', sans-serif;
+  font-weight: bold;
+  border: 2px solid #000000;
+  border-bottom: none;
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 30px;
+  outline: none;
+  transition: 0.4s all linear;
+}
+.mix_button:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+.game_dark {
+  border: 1px solid black;
+  width: 320px;
+  height: 320px;
+  font-family: 'Nanum Gothic', sans-serif;
+  background-color: white;
+  font-size: xx-large;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  cursor: pointer;
+}
+.game_light {
+  border: 1px solid floralwhite;
+  width: 320px;
+  height: 320px;
+  font-family: 'Nanum Gothic', sans-serif;
+  background-color: greenyellow;
+  font-size: xx-large;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  cursor: pointer;
+}
+.game_blocks {
+  width: 78px;
+  height: 78px;
+  border: 1px solid #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s all ease-in-out;
+}
+.game_blocks:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+.game_blocks_light {
+  width: 78px;
+  height: 78px;
+  border: 1px solid #7cc529;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s all ease-in-out;
+}
+.zero {
+  background-color: #747474;
+  color: #747474;
+}
+.zero:hover {
+  background-color: #747474;
+  color: #747474;
+}
+.color_block {
+  display: flex;
+}
+.color_block_light {
+  background-color: #ec20e2;
+  color: #1dd2df;
+  transition: 0.5s linear all;
+}
+.color_block_light:hover {
+  background-color: #4fe621;
+  color: #f32a10;
+}
+.color_block_dark {
+  background-color: #000000;
+  color: #ffffff;
+  transition: 0.5s linear all;
+}
+.color_block_dark:hover {
+  background-color: #fff;
+  color: #000000;
+}

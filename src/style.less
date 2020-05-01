@@ -2,6 +2,7 @@
 
 body {
     background-color:white;
+    // background-repeat:no-repeat;
 }
 
 div#root {
@@ -13,15 +14,25 @@ div#root {
 
 .container_welcome_page {
     height:600px;
-    width:800px;
+    width:100%;
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
+    background-color: green;
+    background: linear-gradient(45deg,#F17C58, #E94584, #24AADB , #27DBB1,#FFDC18, #FF3706);
+    background-size: 600% 100%;
+    animation: gradient 16s linear infinite;
+    animation-direction: alternate;
+}
+
+@keyframes gradient {
+    0% {background-position: 0%}
+    100% {background-position: 100%}
 }
 
 .container_game_page {
-    height: 1080px;
+    height: 720px;
     width: 101.3%;
     margin-top:20px;
     display:flex;
@@ -29,20 +40,36 @@ div#root {
     justify-content:center;
     align-items:center;
     background-image: url(./images/fifteen_second_light_bg.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    visibility: hidden;
 }
 
-.page_heading {
-    color:black;
+.page_heading_light {
+    color:greenyellow;
     font-size: 50px;
 }
+
+.page_heading_dark {
+    color: #000000;
+    font-size: 50px
+}
+
+
 
 .play_button {
     width : 110px;
     height: 70px;
     font-family: 'Nanum Gothic', sans-serif;
-    background-color: black;
-    color: white;
+    background-color: rgb(47, 248, 255);
+    color: #FFDC18;
     font-size: 30px;
+    transition: .5s all ease-in-out;
+}
+.play_button:hover {
+    background-color: rgb(120, 204, 42);
+    color: #E94584;
+    transform: scale(1.5, 1.5)
 }
 
 .mixDiv {
@@ -64,6 +91,7 @@ div#root {
     color: rgb(0, 0, 0);
     font-size: 30px;
     outline: none;
+    transition: .4s all linear;
 }
 
 .mix_button:hover {
@@ -71,12 +99,26 @@ div#root {
     color: rgb(255, 255, 255);
 }
 
-.game {
+.game_dark {
     border: 1px solid black;
     width: 320px;
     height: 320px;
     font-family: 'Nanum Gothic', sans-serif;
     background-color: white;
+    font-size: xx-large;
+    font-weight: bold;;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    cursor: pointer;
+}
+
+.game_light {
+    border: 1px solid floralwhite;
+    width: 320px;
+    height: 320px;
+    font-family: 'Nanum Gothic', sans-serif;
+    background-color: greenyellow;
     font-size: xx-large;
     font-weight: bold;;
     display: flex;
@@ -92,9 +134,50 @@ div#root {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: .5s all ease-in-out;
+}
+
+.game_blocks:hover{
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.game_blocks_light {
+    width: 78px;
+    height: 78px;
+    border: 1px solid rgb(124, 197, 41);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s all ease-in-out;
 }
 
 .zero {
     background-color: rgb(116, 116, 116);
     color: rgb(116, 116, 116);
+}
+.zero:hover {
+    background-color: rgb(116, 116, 116);
+    color: rgb(116, 116, 116);
+}
+.color_block {
+    display: flex;
+}
+.color_block_light {
+    background-color: #ec20e2;
+    color: #1dd2df;
+    transition: .5s linear all
+}
+.color_block_light:hover {
+    background-color: rgb(79, 230, 33);
+    color: #f32a10;
+}
+.color_block_dark {
+    background-color: #000000;
+    color: #ffffff;
+    transition: .5s linear all
+}
+.color_block_dark:hover {
+    background-color: #fff;
+    color: #000000;
 }
