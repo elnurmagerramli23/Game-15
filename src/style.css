@@ -15,7 +15,6 @@ div#root {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: green;
   background: linear-gradient(45deg, #F17C58, #E94584, #24AADB, #27DBB1, #FFDC18, #FF3706);
   background-size: 600% 100%;
   animation: gradient 16s linear infinite;
@@ -59,8 +58,8 @@ div#root {
   transition: 0.5s all ease-in-out;
 }
 .play_button:hover {
-  background-color: #78cc2a;
-  color: #E94584;
+  background-color: #FFDC18;
+  color: #2ff8ff;
   transform: scale(1.5, 1.5);
 }
 .mixDiv {
@@ -127,9 +126,10 @@ div#root {
   color: #ffffff;
 }
 .game_blocks_light {
+  border: 1px solid #7cc529;
+  background-color: #FFDC18;
   width: 78px;
   height: 78px;
-  border: 1px solid #7cc529;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -147,13 +147,13 @@ div#root {
   display: flex;
 }
 .color_block_light {
-  background-color: #ec20e2;
+  background-color: yellow;
   color: #1dd2df;
   transition: 0.5s linear all;
 }
 .color_block_light:hover {
-  background-color: #4fe621;
-  color: #f32a10;
+  background-color: #1dd2df;
+  color: yellow;
 }
 .color_block_dark {
   background-color: #000000;
@@ -163,4 +163,29 @@ div#root {
 .color_block_dark:hover {
   background-color: #fff;
   color: #000000;
+}
+.light_bg {
+  background-color: red;
+  color: green;
+  height: 600px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-size: 600% 100%;
+  animation: gradient 16s linear infinite;
+  animation-direction: alternate;
+}
+.welcome {
+  height: 600px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(45deg, #F17C58, #E94584, #24AADB, #27DBB1, #FFDC18, #FF3706);
+  background-size: 600% 100%;
+  animation: gradient 16s linear infinite;
+  animation-direction: alternate;
 }

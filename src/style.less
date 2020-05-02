@@ -19,7 +19,6 @@ div#root {
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    background-color: green;
     background: linear-gradient(45deg,#F17C58, #E94584, #24AADB , #27DBB1,#FFDC18, #FF3706);
     background-size: 600% 100%;
     animation: gradient 16s linear infinite;
@@ -35,7 +34,7 @@ div#root {
     height: 720px;
     width: 101.3%;
     margin-top:0;
-    display:none;
+    display: none;
     flex-direction:column;
     justify-content:center;
     align-items:center;
@@ -66,8 +65,8 @@ div#root {
     transition: .5s all ease-in-out;
 }
 .play_button:hover {
-    background-color: rgb(120, 204, 42);
-    color: #E94584;
+    background-color: #FFDC18;
+    color: rgb(47, 248, 255);
     transform: scale(1.5, 1.5)
 }
 
@@ -142,9 +141,10 @@ div#root {
 }
 
 .game_blocks_light {
+    border: 1px solid rgb(124, 197, 41);
+    background-color: #FFDC18;
     width: 78px;
     height: 78px;
-    border: 1px solid rgb(124, 197, 41);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -163,13 +163,13 @@ div#root {
     display: flex;
 }
 .color_block_light {
-    background-color: #ec20e2;
+    background-color: yellow;
     color: #1dd2df;
     transition: .5s linear all
 }
 .color_block_light:hover {
-    background-color: rgb(79, 230, 33);
-    color: #f32a10;
+    background-color: #1dd2df;
+    color: yellow;
 }
 .color_block_dark {
     background-color: #000000;
@@ -179,4 +179,44 @@ div#root {
 .color_block_dark:hover {
     background-color: #fff;
     color: #000000;
+}
+
+// .light_background {
+//     height: 720px;
+//     width: 101.3%;
+//     margin-top:0;
+//     display:none;
+//     flex-direction:column;
+//     justify-content:center;
+//     align-items:center;
+//     background-image: url(./images/light-bg.jpg);
+//     background-size: contain;
+//     background-repeat: no-repeat;
+// }
+
+.light_bg {
+    background-color: red;
+    color: green;
+    height:600px;
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    background-size: 600% 100%;
+    animation: gradient 16s linear infinite;
+    animation-direction: alternate;
+}
+
+.welcome {
+    height:600px;
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    background: linear-gradient(45deg,#F17C58, #E94584, #24AADB , #27DBB1,#FFDC18, #FF3706);
+    background-size: 600% 100%;
+    animation: gradient 16s linear infinite;
+    animation-direction: alternate;
 }

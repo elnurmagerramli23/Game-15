@@ -119,7 +119,7 @@ Controller.prototype.getVictory = function() {
     let defaultArr = JSON.stringify(testArray);
 
     if(test === defaultArr) {
-        setTimeout(function(){ alert('YOU WIN!!!!'); }, 200);
+        setTimeout(function(){ alert('YOU DID IT BROOO!!!!'); }, 200);
     }
 }
 
