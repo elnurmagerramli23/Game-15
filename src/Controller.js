@@ -74,7 +74,6 @@ Controller.prototype.checkForZero = function(item) {
 Controller.prototype.getRandom = function() {
     this._mtx = this._model.getMatrix();
     let arr = this._mtx.flat();
-    
     let temp = 0;
     let j = 0;
 
@@ -109,17 +108,14 @@ Controller.prototype.win = function() {
     }
 }
 
-
 Controller.prototype.getVictory = function() {
     const testMatrix = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 0];
     let testArray = this._mtx.flat();
-    console.log('check', testArray);
-
     let test = JSON.stringify(testMatrix);
     let defaultArr = JSON.stringify(testArray);
 
     if(test === defaultArr) {
-        setTimeout(function(){ alert('YOU WIN!!!!'); }, 200);
+        setTimeout(function(){ alert('YOU DID IT BROOO!!!!'); }, 200);
     }
 }
 

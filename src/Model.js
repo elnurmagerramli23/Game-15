@@ -21,7 +21,7 @@ function Model() {
     
 Model.prototype.getMatrix = function () {
     return this._matrix;
-};
+}
 
 Model.prototype.setMatrix = function(array) {
     this._matrix = array;
@@ -40,7 +40,7 @@ Model.prototype.findIndex = function (value) {
             }
         }
     }
-};
+}
     
 Model.prototype.swapElems = function (elem1, elem2) {
     this._box = elem1;
@@ -57,6 +57,5 @@ Model.prototype.swapElems = function (elem1, elem2) {
     console.log(this._matrix);
     
 }
-
 
 module.exports = Model;
