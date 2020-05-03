@@ -1,6 +1,7 @@
 const Model = require("./Model.js");
 const View = require("./View.js");
 const Controller = require("./Controller.js");
+
 import './style.less';
 
 function initialize() {
