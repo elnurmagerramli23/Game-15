@@ -58,4 +58,4 @@ Model.prototype.swapElems = function (elem1, elem2) {
     
 }
 
-module.exports = Model;
+export default Model;

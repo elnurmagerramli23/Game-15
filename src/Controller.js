@@ -1,3 +1,5 @@
+import {sendPutRequest, sendGetRequest} from "./REST";
+
 function Controller( model,view ) {
     this._model = model;
     this._view = view;
@@ -21,6 +23,7 @@ Controller.prototype.sendMatrixToView = function () {
             this._view.drawMatrix(element); 
         })
     })
+    sendGetRequest(data);
 }
 
 Controller.prototype.getFromModel = function(value) {
@@ -86,6 +89,8 @@ Controller.prototype.getRandom = function() {
     }
     
     this._mtx = arr.map((_, i, a) => a.slice(i * 4, i * 4 + 4)).filter((el) => el.length);
+    
+    sendPutRequest(this._mtx);
 }
 
 Controller.prototype.shuffle = function() {
@@ -93,19 +98,6 @@ Controller.prototype.shuffle = function() {
     this._model.setMatrix(this._mtx);
     this._view.deleteItems();    
     this.sendMatrixToView();  
-}
-
-Controller.prototype.win = function() {
-    const arr = this._mtx;
-    const matrix = this._model.getMatrix();
-
-    for(let i = 0; i < arr.length; i++ ) {
-        for(let j = 0; j < arr.length; j++) {
-            if(arr[i][j] === matrix[i][j]) {
-                alert('You did it bro!!!!');
-            }
-        }
-    }
 }
 
 Controller.prototype.getVictory = function() {
@@ -119,4 +111,4 @@ Controller.prototype.getVictory = function() {
     }
 }
 
-module.exports = Controller;
+export default Controller;
