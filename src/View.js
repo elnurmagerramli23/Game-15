@@ -1,3 +1,4 @@
+
 function View() {
     this._root = document.querySelector('div#root');
     this._gameBlock = null;
@@ -179,4 +180,4 @@ View.prototype.gameShuffle = function (cb) {
     }, false)
 }
 
-module.exports = View;
+export default View;
