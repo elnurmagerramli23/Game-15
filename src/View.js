@@ -178,7 +178,6 @@ View.prototype.gameShuffle = function (cb) {
         cb(array);
     }, false)
 }
-
 export default View;
 
 // import fifteenSecondDarkBg from './images/fifteen_second-dark_bg.jpg';
