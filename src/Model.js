@@ -1,10 +1,5 @@
 function Model() {
-    this._matrix = [
-        [1, 2, 3, 4],
-        [5, 6, 7, 8],
-        [9, 10, 11, 12],
-        [13, 14, 15, 0]
-    ];
+    this._matrix = [];
     
     this._box = {
         coordinateX: 0,
@@ -25,8 +20,9 @@ Model.prototype.getMatrix = function () {
 
 Model.prototype.setMatrix = function(array) {
     this._matrix = array;
+    console.log('model set matrix', this._matrix);
 }
-    
+
 Model.prototype.findIndex = function (value) {
     this._box.value = Number(value);
     

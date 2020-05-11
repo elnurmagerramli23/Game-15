@@ -7,6 +7,7 @@ function View() {
     this._gameBlock = null;
     this._gameNumbers = null;
     this.mix_button = null;
+    this.play_button = null;
 }
 
 View.prototype.init = function() {
@@ -18,7 +19,7 @@ View.prototype.init = function() {
     const dark = createButton({class: 'color_block_dark color'});
     const white = createButton({class: 'color_block_white color'});
     const page_heading_light = createHeading({class: 'page_heading_light'});
-    const play_button = createButton({class: 'play_button', id: 'play_button'});
+    this.play_button = createButton({class: 'play_button', id: 'play_button'});
     const mixDiv = createDiv({class: 'mixDiv'});
 
     light.innerHTML = 'Colorful mode';
@@ -26,9 +27,10 @@ View.prototype.init = function() {
     this._gameBlock = createDiv({class: 'game_dark'});
     white.innerHTML = 'White mode';
     page_heading_light.innerHTML = 'WELCOME TO FIFTEEN!';
-    play_button.innerHTML = 'PLAY';
+    this.play_button.innerHTML = 'PLAY';
     this.mix_button = createButton({class: 'mix_button', id: 'mix_button'});
     this.mix_button.innerHTML = 'MIX';
+    
     container_game_page.append(mixDiv);
     mixDiv.append(this.mix_button);
     container_game_page.append(this._gameBlock);
@@ -38,7 +40,7 @@ View.prototype.init = function() {
     color_block.append(dark);
     color_block.append(white);
     container_welcome_page.append(page_heading_light);
-    container_welcome_page.append(play_button);
+    container_welcome_page.append(this.play_button);
     container_welcome_page.append(color_block);
     container_welcome_page.append(welcome_page_bgColor);
 
@@ -76,6 +78,13 @@ View.prototype.white = function () {
         document.querySelector('.game_dark').style.border = '1px solid #ffffff';
     })
 }
+
+// View.prototype.clickPlay = function(cb) {
+//     this.play_button.onclick = function() {
+        
+//         cb();
+//     }
+// }
 
 View.prototype.lightMode = function () {
     const light = document.querySelector('.color_block_light');

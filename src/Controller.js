@@ -8,32 +8,47 @@ function Controller( model,view ) {
 
 Controller.prototype.init = function() {
     this._view.init();
-    this.sendMatrixToView();
+    this.waitForData();
     this.getRandom();
     this.getVictory();
+    // this._view.clickPlay(this.sendMatrixToView.bind(this));
     this._view.gameShuffle(this.shuffle.bind(this));
     this._view.sendValue(this.getFromModel.bind(this));
 }
 
+Controller.prototype.waitForData = function() {
+    const promise = new Promise(function(res,rej) {
+        res(sendGetRequest(this.setArray))
+    });
+    promise.then(() => this.sendMatrixToView());
+};
+
 Controller.prototype.sendMatrixToView = function () {
     const model = this._model.getMatrix();
-
+    console.log('sen to view matrix',model);
+    
     model.forEach(array => {
         array.forEach(element => {
             this._view.drawMatrix(element); 
         })
     })
-    sendGetRequest(data);
+}
+
+Controller.prototype.setArray = function(matrix) {
+    this._model.setMatrix(matrix);
+    console.log('setArray function ', this._model.getMatrix())
 }
 
 Controller.prototype.getFromModel = function(value) {
     const indexEl = this._model.findIndex(value);
     const check = this.checkForZero(indexEl);
-    
+
     if(check) {
         this._model.swapElems(indexEl, check);
+        const matrix = this._model.getMatrix();
+        sendPutRequest(matrix);
         console.log(this._model.getMatrix());
-        
+
         this._view.deleteItems();
         this.sendMatrixToView();
         this.getVictory();
@@ -89,8 +104,6 @@ Controller.prototype.getRandom = function() {
     }
     
     this._mtx = arr.map((_, i, a) => a.slice(i * 4, i * 4 + 4)).filter((el) => el.length);
-    
-    sendPutRequest(this._mtx);
 }
 
 Controller.prototype.shuffle = function() {

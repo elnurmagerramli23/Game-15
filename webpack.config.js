@@ -5,7 +5,7 @@ const CssWebpackPlugin = require('mini-css-extract-plugin');
 module.exports = {
     entry: path.resolve(__dirname, "./src/index.js"),
     output: {
-        path: path.resolve(__dirname, "./build"),
+        path: path.resolve(__dirname, "../game-with-backend/public"),
         filename: "index.js"
     },
     devServer: {

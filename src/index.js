@@ -1,6 +1,6 @@
-import "./Model.js";
-import "./View.js";
-import "./Controller.js";
+import Model from "./Model.js";
+import View from "./View.js";
+import Controller from "./Controller.js";
 import './style.less';
 
 function initialize() {
