@@ -11,7 +11,7 @@ Controller.prototype.init = function() {
     this.waitForData();
     this.getRandom();
     this.getVictory();
-    // this._view.clickPlay(this.sendMatrixToView.bind(this));
+    this._view.clickPlay(this.sendMatrixToView.bind(this));
     this._view.gameShuffle(this.shuffle.bind(this));
     this._view.sendValue(this.getFromModel.bind(this));
 }

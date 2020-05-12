@@ -79,12 +79,12 @@ View.prototype.white = function () {
     })
 }
 
-// View.prototype.clickPlay = function(cb) {
-//     this.play_button.onclick = function() {
+View.prototype.clickPlay = function(cb) {
+    this.play_button.onclick = function() {
         
-//         cb();
-//     }
-// }
+        cb();
+    }
+}
 
 View.prototype.lightMode = function () {
     const light = document.querySelector('.color_block_light');
